@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>SimpLog.FileLog</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Georgi Chekanov</Authors>
+    <Company>Georgi Chekanov</Company>
+    <Product>SimpLog</Product>
+    <Description>A simple way of logging event in a log files. Works for NetCore versions.</Description>
+    <Copyright>Copyright (c) Georgi Chekanov 2023</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>log, .net core, logging, simple, file log</PackageTags>
+    <PackageReleaseNotes>- separate version from SimpLog for only logging into a file</PackageReleaseNotes>
+    <PackAsTool>False</PackAsTool>
+    <ToolCommandName>simplog-filelog</ToolCommandName>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
