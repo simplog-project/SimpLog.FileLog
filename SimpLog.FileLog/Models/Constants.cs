@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models
 {
-    internal class Constants
+    public class Constants
     {
         public const string DateFormat = "yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'";
 

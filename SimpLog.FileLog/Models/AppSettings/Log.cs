@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models.AppSettings
 {
-    internal class Log
+    public class Log
     {
         public LogTypeObject? Trace { get; set; }
 

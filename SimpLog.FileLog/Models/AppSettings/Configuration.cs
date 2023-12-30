@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models.AppSettings
 {
-    internal class Configuration
+    public class Configuration
     {
         public MainConfiguration? Main_Configuration { get; set; }
 

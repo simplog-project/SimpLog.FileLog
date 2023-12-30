@@ -2,30 +2,9 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpLog.FileLog.Models
 {
-    internal enum Global_Database_Type
-    {
-        [Description("MSSql")]
-        MSSql,
-        [Description("MySql")]
-        MySql,
-        [Description("MariaDb")]
-        MariaDb,
-        [Description("Postgre")]
-        PostgreSql,
-        [Description("Oracle")]
-        Oracle,
-        [Description("MongoDb")]
-        MongoDb
-    }
-
     public enum FileSaveType
     {
         /// <summary>
@@ -45,7 +24,7 @@ namespace SimpLog.FileLog.Models
         BufferMemory
     }
 
-    internal enum LogType
+    public enum LogType
     {
         /// <summary>
         /// TRACE level: This should be used during development to track bugs, but never committed to your VCS.

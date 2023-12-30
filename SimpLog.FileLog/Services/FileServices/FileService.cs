@@ -8,7 +8,7 @@ using static SimpLog.FileLog.Models.Constants;
 
 namespace SimpLog.FileLog.Services.FileServices
 {
-    internal class FileService
+    public class FileService
     {
         /// <summary>
         /// FullPath + FileName is the key and value is what should be saved into the log
@@ -17,22 +17,22 @@ namespace SimpLog.FileLog.Services.FileServices
 
         public static Models.AppSettings.Configuration configuration = ConfigurationServices.ConfigService.BindConfigObject();
 
-        internal readonly bool? _Enable_File_Log = (configuration.File_Configuration.Enable_File_Log == null) ? true : Convert.ToBoolean(configuration.File_Configuration.Enable_File_Log);
+        public readonly bool? _Enable_File_Log = (configuration.File_Configuration.Enable_File_Log == null) ? true : Convert.ToBoolean(configuration.File_Configuration.Enable_File_Log);
 
-        internal readonly bool? _Trace_File   = (configuration.LogType.Trace.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Trace.Log);
-        internal readonly bool? _Debug_File   = (configuration.LogType.Debug.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Debug.Log);
-        internal readonly bool? _Info_File    = (configuration.LogType.Info.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Info.Log);
-        internal readonly bool? _Notice_File  = (configuration.LogType.Notice.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Notice.Log);
-        internal readonly bool? _Warn_File    = (configuration.LogType.Warn.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Warn.Log);
-        internal readonly bool? _Error_File   = (configuration.LogType.Error.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Error.Log);
-        internal readonly bool? _Fatal_File   = (configuration.LogType.Fatal.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Fatal.Log);
+        public readonly bool? _Trace_File   = (configuration.LogType.Trace.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Trace.Log);
+        public readonly bool? _Debug_File   = (configuration.LogType.Debug.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Debug.Log);
+        public readonly bool? _Info_File    = (configuration.LogType.Info.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Info.Log);
+        public readonly bool? _Notice_File  = (configuration.LogType.Notice.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Notice.Log);
+        public readonly bool? _Warn_File    = (configuration.LogType.Warn.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Warn.Log);
+        public readonly bool? _Error_File   = (configuration.LogType.Error.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Error.Log);
+        public readonly bool? _Fatal_File   = (configuration.LogType.Fatal.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Fatal.Log);
 
         /// <summary>
         /// Pass message and check if it is for execution
         /// </summary>
         /// <param name="bufferMessage"></param>
         /// <returns></returns>
-        internal async Task BufferMessage(string message, LogType bufferMessageType, string path_to_save_log, string log_file_name)
+        public async Task BufferMessage(string message, LogType bufferMessageType, string path_to_save_log, string log_file_name)
         {
             await AppendMessage(message, bufferMessageType, path_to_save_log, log_file_name);
 
@@ -47,7 +47,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// <param name="path_to_save_log"></param>
         /// <param name="log_file_name"></param>
         /// <returns></returns>
-        internal async Task AppendMessage(string message, LogType messageType, string path_to_save_log, string log_file_name)
+        public async Task AppendMessage(string message, LogType messageType, string path_to_save_log, string log_file_name)
         {
             //  String builder where the message will be saved
             StringBuilder Message = new StringBuilder();
@@ -71,7 +71,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// Log rotation implemented
         /// </summary>
         /// <returns></returns>
-        internal async Task FileRenameIfNeeded(string filePath_final, string fileName_final)
+        public async Task FileRenameIfNeeded(string filePath_final, string fileName_final)
         {
             string  fullFilePathName    = filePath_final + PathSeparator + fileName_final + FileFormat;
             int     i                   = 1;
@@ -95,7 +95,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// Save log message from buffer memory.
         /// </summary>
         /// <returns></returns>
-        internal async Task SaveMessageIntoLogFile()
+        public async Task SaveMessageIntoLogFile()
         {
             if (Logs.Count <= 0) return;
 
@@ -131,7 +131,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// <param name="path_to_save_log"></param>
         /// <param name="log_file_name"></param>
         /// <returns></returns>
-        internal async Task ImediateSaveMessageIntoLogFile(string message, LogType messageType, string? path_to_save_log, string? log_file_name)
+        public async Task ImediateSaveMessageIntoLogFile(string message, LogType messageType, string? path_to_save_log, string? log_file_name)
         {
             await FileRenameIfNeeded(path_to_save_log, log_file_name);
 
@@ -154,7 +154,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// </summary>
         /// <param name="logType"></param>
         /// <returns></returns>
-        internal string MessageType(LogType logType)
+        public string MessageType(LogType logType)
         {
             switch (logType)
             {
@@ -186,7 +186,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// <param name="path_to_save_log"></param>
         /// <param name="log_file_name"></param>
         /// <returns></returns>
-        internal async Task Save(
+        public async Task Save(
             string message, 
             LogType logType, 
             FileSaveType? saveType      = FileSaveType.Standart, 
@@ -211,7 +211,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        internal async Task SaveSimpLogError(string message)
+        public async Task SaveSimpLogError(string message)
         {
             //  Check if it has been disabled from appsettings.json file.
             if(configuration.Main_Configuration.Disable_Log is not null && 
@@ -246,7 +246,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// <param name="saveType"></param>
         /// <param name="logType"></param>
         /// <returns></returns>
-        internal bool ShouldSaveInFile(FileSaveType? saveType, LogType logType)
+        public bool ShouldSaveInFile(FileSaveType? saveType, LogType logType)
         {
             //  disabled from custom controller that should not be saved into a log file
             if(saveType.Equals(FileSaveType.DontSave) || (_Enable_File_Log is not null && _Enable_File_Log is false)) 
@@ -310,7 +310,7 @@ namespace SimpLog.FileLog.Services.FileServices
         /// <param name="message"></param>
         /// <param name="logType"></param>
         /// <returns></returns>
-        internal async Task SaveIntoFile(string? path_to_save_log, string? log_file_name, FileSaveType? saveType, string message, LogType logType)
+        public async Task SaveIntoFile(string? path_to_save_log, string? log_file_name, FileSaveType? saveType, string message, LogType logType)
         {
             //  Checks if there should be saved a log into a file.
             if (saveType == FileSaveType.DontSave)

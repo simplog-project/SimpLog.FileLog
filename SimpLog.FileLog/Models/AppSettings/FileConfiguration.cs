@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models.AppSettings
 {
-    internal class FileConfiguration
+    public class FileConfiguration
     {
         public string? PathToSaveLogs { get; set; }
 

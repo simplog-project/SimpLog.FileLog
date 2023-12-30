@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models.AppSettings
 {
-    internal class MainConfiguration
+    public class MainConfiguration
     {
         public string? WhyLogIsNotWorkingPath { get; set; }
 

@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace SimpLog.FileLog.Services.ConfigurationServices
 {
-    internal static class ConfigService
+    public static class ConfigService
     {
         #region Main Configuration Variable
 

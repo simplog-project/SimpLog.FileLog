@@ -1,6 +1,6 @@
 ﻿namespace SimpLog.FileLog.Models.AppSettings
 {
-    internal class LogTypeObject
+    public class LogTypeObject
     {
         public bool? Log { get; set; }
 
