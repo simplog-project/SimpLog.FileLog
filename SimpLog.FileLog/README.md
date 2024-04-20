@@ -1,6 +1,5 @@
-# What is SimpLog
-Simple and very flexible tool for development with .NET Core. Saves logs to a file, or a database where you want. Also gives opportunity to 
-receive logs via email with the proper configuration. SimpLog.FileLog is for those who want to use only the functionality of saving into a file.
+# What is SimpLog.FileLog
+Simple and very flexible tool for development with .NET Core. Saves logs into a file.
 
 # Log Types in SimpLog
 | Type | Description |
@@ -18,8 +17,6 @@ receive logs via email with the proper configuration. SimpLog.FileLog is for tho
 | Features | Description |
 | ----- | ----- |
 | &#128195; Log into a file | With SimpLog you can save logs into a file where you want on your local machine. |
-| &#128375; Support Debug | If you have any issues with the library, it has its log into a file. Just send us the content from there and we will take care of the rest. The configuration is in SimpLog:Main fields in appsettings.json.  |
-
 
 # Configuration
 

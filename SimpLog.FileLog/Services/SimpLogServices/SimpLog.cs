@@ -37,5 +37,8 @@ namespace SimpLog.FileLog.Services.SimpLogServices
 
         public async Task Fatal(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Debug, saveType, path_to_save_log, log_file_name);
+
+        public async Task SaveLogFile(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null, LogType logType = LogType.Info)
+            => await _fileService.Save(message, logType, saveType, path_to_save_log, log_file_name);
     }
 }
