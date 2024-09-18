@@ -61,6 +61,8 @@ File Save Types
 
 Create simplog.json file in the root folder of your startup project. On the same level where is appsettings.json. Please have in mind that every configuration in simplog.json is optional ☺️
 
+Example of simplog.json can be found in samples.
+
 ```
   "SimpLog": {                              -> all of the below fields are optional
     "Main": {

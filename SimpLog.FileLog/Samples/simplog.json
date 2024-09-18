@@ -1,0 +1,35 @@
+{
+  "Main_Configuration": {
+    "WhyLogIsNotWorkingPath": "",
+    "WhyLogIsNotWorkingFileName": "",
+    "Disable_Log": false
+  },
+  "File_Configuration": {
+    "PathToSaveLogs": "",
+    "LogFileName": "",
+    "Enable_File_Log": true
+  },
+  "LogType": {
+    "Trace": {
+      "SendEmail": true
+    },
+    "Debug": {
+      "SendEmail": true
+    },
+    "Info": {
+      "SendEmail": true
+    },
+    "Notice": {
+      "SendEmail": true
+    },
+    "Warn": {
+      "SendEmail": true
+    },
+    "Error": {
+      "SendEmail": true
+    },
+    "Fatal": {
+      "SendEmail": true
+    }
+  }
+}

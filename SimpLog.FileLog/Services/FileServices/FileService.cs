@@ -19,6 +19,7 @@ namespace SimpLog.FileLog.Services.FileServices
 
         public readonly bool? _Enable_File_Log = (configuration.File_Configuration.Enable_File_Log == null) ? true : Convert.ToBoolean(configuration.File_Configuration.Enable_File_Log);
 
+
         public readonly bool? _Trace_File   = (configuration.LogType.Trace.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Trace.Log);
         public readonly bool? _Debug_File   = (configuration.LogType.Debug.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Debug.Log);
         public readonly bool? _Info_File    = (configuration.LogType.Info.Log == null) ? true : Convert.ToBoolean(configuration.LogType.Info.Log);

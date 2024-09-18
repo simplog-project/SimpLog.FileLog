@@ -1,6 +1,7 @@
 ﻿using SimpLog.FileLog.Models.AppSettings;
 using System;
 using System.IO;
+using System.Runtime.Serialization.Json;
 using System.Text.Json;
 
 namespace SimpLog.FileLog.Services.ConfigurationServices
@@ -108,7 +109,11 @@ namespace SimpLog.FileLog.Services.ConfigurationServices
                 };
             }
             else
-                simpLogConfig = JsonSerializer.Deserialize<Configuration>(File.ReadAllText(Environment.CurrentDirectory + "\\simplog.json"));
+            {
+                var options = new JsonSerializerOptions();
+                options.ReadCommentHandling = JsonCommentHandling.Skip;
+                simpLogConfig = JsonSerializer.Deserialize<Configuration?>(File.ReadAllText(Environment.CurrentDirectory + "\\simplog.json"), options);
+            }
 
             #region Main Configuration Get From Json
 
