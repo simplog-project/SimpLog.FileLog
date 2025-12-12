@@ -1,19 +1,28 @@
-﻿namespace SimpLog.FileLog.Models.AppSettings
+﻿using System.Text.Json.Serialization;
+
+namespace SimpLog.FileLog.Models.AppSettings
 {
     public class Log
     {
-        public LogTypeObject? Trace { get; set; }
+        [JsonPropertyName("Trace")]
+        public LogTypeObject Trace { get; set; } = new();
 
-        public LogTypeObject? Debug { get; set; }
+        [JsonPropertyName("Debug")]
+        public LogTypeObject Debug { get; set; } = new();
 
-        public LogTypeObject? Info { get; set; }
+        [JsonPropertyName("Info")]
+        public LogTypeObject Info { get; set; } = new();
 
-        public LogTypeObject? Notice { get; set; }
+        [JsonPropertyName("Notice")]
+        public LogTypeObject Notice { get; set; } = new();
 
-        public LogTypeObject? Warn { get; set; }
+        [JsonPropertyName("Warn")]
+        public LogTypeObject Warn { get; set; } = new();
 
-        public LogTypeObject? Error { get; set; }
+        [JsonPropertyName("Error")]
+        public LogTypeObject Error { get; set; } = new();
 
-        public LogTypeObject? Fatal { get; set; }
+        [JsonPropertyName("Fatal")]
+        public LogTypeObject Fatal { get; set; } = new();
     }
 }

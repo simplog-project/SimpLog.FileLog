@@ -4,10 +4,13 @@ namespace SimpLog.FileLog.Models.AppSettings
 {
     public class Configuration
     {
-        public MainConfiguration? Main_Configuration { get; set; } 
+        [JsonPropertyName("Main_Configuration")]
+        public MainConfiguration? Main_Configuration { get; set; } = new ();
 
-        public FileConfiguration? File_Configuration { get; set; }
+        [JsonPropertyName("File_Configuration")]
+        public FileConfiguration? File_Configuration { get; set; } = new ();
 
-        public Log? LogType { get; set; }
+        [JsonPropertyName("LogType")]
+        public Log? LogType { get; set; } = new();
     }
 }

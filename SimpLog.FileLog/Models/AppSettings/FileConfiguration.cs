@@ -1,11 +1,18 @@
-﻿namespace SimpLog.FileLog.Models.AppSettings
+﻿using System;
+using System.IO;
+using System.Text.Json.Serialization;
+
+namespace SimpLog.FileLog.Models.AppSettings
 {
     public class FileConfiguration
     {
-        public string? PathToSaveLogs { get; set; }
+        [JsonPropertyName("PathToSaveLogs")]
+        public string PathToSaveLogs { get; set; } = Path.GetTempPath();
 
-        public string? LogFileName { get; set; }
+        [JsonPropertyName("LogFileName")]
+        public string LogFileName { get; set; } = $"SimpLog_{DateTime.Now.DayOfYear}.txt";
 
-        public bool? Enable_File_Log { get; set; }
+        [JsonPropertyName("Enable_File_Log")]
+        public bool Enable_File_Log { get; set; } = false;
     }
 }

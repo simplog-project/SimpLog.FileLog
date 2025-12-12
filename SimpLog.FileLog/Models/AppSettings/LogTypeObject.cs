@@ -1,11 +1,16 @@
-﻿namespace SimpLog.FileLog.Models.AppSettings
+﻿using System.Text.Json.Serialization;
+
+namespace SimpLog.FileLog.Models.AppSettings
 {
     public class LogTypeObject
     {
-        public bool? Log { get; set; }
+        [JsonPropertyName("Log")]
+        public bool Log { get; set; } = false;
 
-        public bool? SendEmail { get; set; }
+        [JsonPropertyName("SendEmail")]
+        public bool SendEmail { get; set; } = false;
 
-        public bool? SaveInDatabase { get; set; }
+        [JsonPropertyName("SaveInDatabase")]
+        public bool SaveInDatabase { get; set; } = false;
     }
 }

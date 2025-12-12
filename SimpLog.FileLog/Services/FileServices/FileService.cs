@@ -190,7 +190,7 @@ namespace SimpLog.FileLog.Services.FileServices
         public async Task Save(
             string message, 
             LogType logType, 
-            FileSaveType? saveType      = FileSaveType.Standart, 
+            FileSaveType? saveType      = FileSaveType.Standard, 
             string? path_to_save_log    = null,
             string? log_file_name       = null)
         {

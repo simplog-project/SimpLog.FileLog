@@ -17,28 +17,28 @@ namespace SimpLog.FileLog.Services.SimpLogServices
         /// <param name="path_to_save_log"></param>
         /// <param name="log_file_name"></param>
         /// <returns></returns>
-        public async Task Trace(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Trace(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Trace, saveType, path_to_save_log, log_file_name);
 
-        public async Task Debug(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Debug(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Debug, saveType, path_to_save_log, log_file_name);
 
-        public async Task Info(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Info(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Info, saveType, path_to_save_log, log_file_name);
         
-        public async Task Notice(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Notice(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Notice, saveType, path_to_save_log, log_file_name);
 
-        public async Task Warn(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Warn(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Warn, saveType, path_to_save_log, log_file_name);
 
-        public async Task Error(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Error(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Error, saveType, path_to_save_log, log_file_name);
 
-        public async Task Fatal(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null)
+        public async Task Fatal(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null)
             => await _fileService.Save(message, LogType.Fatal, saveType, path_to_save_log, log_file_name);
 
-        public async Task SaveLogFile(string message, FileSaveType? saveType = FileSaveType.Standart, string? path_to_save_log = null, string? log_file_name = null, LogType logType = LogType.Info)
+        public async Task SaveLogFile(string message, FileSaveType? saveType = FileSaveType.Standard, string? path_to_save_log = null, string? log_file_name = null, LogType logType = LogType.Info)
             => await _fileService.Save(message, logType, saveType, path_to_save_log, log_file_name);
     }
 }
