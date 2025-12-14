@@ -80,13 +80,13 @@ namespace SimpLog.FileLog.Models
     {
         public static string ToLabel(this LogType logType) => logType switch
         {
-            LogType.Trace   => "TRACE:",
-            LogType.Debug   => "DEBUG:",
-            LogType.Info    => "INFO:",
-            LogType.Notice  => "NOTICE:",
-            LogType.Warn    => "WARN:",
-            LogType.Error   => "ERROR:",
-            LogType.Fatal   => "FATAL:",
+            LogType.Trace   => $"{nameof(LogType.Trace).ToUpperInvariant()}:",
+            LogType.Debug   => $"{nameof(LogType.Debug).ToUpperInvariant()}:",
+            LogType.Info    => $"{nameof(LogType.Info).ToUpperInvariant()}:",
+            LogType.Notice  => $"{nameof(LogType.Notice).ToUpperInvariant()}:",
+            LogType.Warn    => $"{nameof(LogType.Warn).ToUpperInvariant()}:",
+            LogType.Error   => $"{nameof(LogType.Error).ToUpperInvariant()}:",
+            LogType.Fatal   => $"{nameof(LogType.Fatal).ToUpperInvariant()}:",
             _               => "NO TYPE:"
         };
     }

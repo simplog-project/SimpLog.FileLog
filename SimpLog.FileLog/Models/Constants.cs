@@ -2,14 +2,17 @@
 
 namespace SimpLog.FileLog.Models
 {
-    public class Constants
+    public static class Constants
     {
-        public const string DateFormat = "yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'";
-
+        #region File Settings
         public const string FileFormat = ".txt";
-
-        public const string Separator = " | ";
-
         public static readonly char PathSeparator = Path.DirectorySeparatorChar;
+        #endregion
+
+        #region Logging Settings
+        public const string DateFormat = "yyyy-MM-dd'T'HH:mm:ss.fffffff'Z'";
+        public const string Separator = " | ";
+        #endregion
+
     }
 }

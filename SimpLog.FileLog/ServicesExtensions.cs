@@ -8,21 +8,49 @@ namespace SimpLog.FileLog
 {
     public static class ServicesExtensions
     {
+        private static CancellationTokenSource _cts;
+        private static Task _backgroundTask;
+        private static readonly object _lock = new();
+
         /// <summary>
-        /// SimpLog is a library for log files.
+        /// Starts SimpLog background file logging.
+        /// Safe to call once during app startup.
         /// </summary>
-        public static async Task SimpLog()
+        public static void SimpLog()
         {
-            Thread backhroundThread = new Thread(BufferSave) { IsBackground = true };
-            backhroundThread.Start();
+            lock (_lock)
+            {
+                if (_backgroundTask != null)
+                    return; // already running
+
+                _cts = new CancellationTokenSource();
+                _backgroundTask = Task.Run(() => BufferSave(_cts.Token));
+            }
         }
 
-        static async void BufferSave()
+        /// <summary>
+        /// Optional: stop logging gracefully.
+        /// </summary>
+        public static async Task StopAsync()
         {
-            var token = new CancellationTokenSource();
+            lock (_lock)
+            {
+                if (_cts == null)
+                    return;
 
-            CancellationToken stoppingToken;
+                _cts.Cancel();
+            }
 
+            try
+            {
+                await _backgroundTask;
+            }
+            catch (OperationCanceledException) { }
+        }
+
+
+        private static async Task BufferSave(CancellationToken token)
+        {
             while (!token.IsCancellationRequested)
             {
                 //  If the configuration file was not set

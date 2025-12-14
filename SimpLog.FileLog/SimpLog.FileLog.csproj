@@ -5,16 +5,15 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>SimpLog.FileLog</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Georgi Chekanov</Authors>
     <Company>Georgi Chekanov</Company>
     <Product>SimpLog</Product>
-    <Description>A simple way of logging event in a log files. Works for NetCore versions.</Description>
+    <Description>A lightweight and simple file logging library for .NET applications, running in the background with minimal configuration.</Description>
     <Copyright>Copyright (c) Georgi Chekanov 2024</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageTags>log, .net core, logging, simple, file log</PackageTags>
-    <PackageReleaseNotes>- ignoring comments in simplog.json
-- fixed to be able to set something different rather than Debug as type of message</PackageReleaseNotes>
+    <PackageTags>logging file-logging logger logs dotnet async lightweight simple</PackageTags>
+    <PackageReleaseNotes>- optimised the library</PackageReleaseNotes>
     <PackAsTool>False</PackAsTool>
     <ToolCommandName>simplog-filelog</ToolCommandName>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
