@@ -9,11 +9,12 @@
     <Authors>Georgi Chekanov</Authors>
     <Company>Georgi Chekanov</Company>
     <Product>SimpLog</Product>
-    <Description>A lightweight and simple file logging library for .NET applications, running in the background with minimal configuration.</Description>
-    <Copyright>Copyright (c) Georgi Chekanov 2024</Copyright>
+    <Description>SimpLog.FileLog provides lightweight, configurable file logging for .NET apps with multiple log levels and optional buffered writes.</Description>
+    <Copyright>Copyright (c) Georgi Chekanov 2025</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>logging file-logging logger logs dotnet async lightweight simple</PackageTags>
-    <PackageReleaseNotes>- optimised the library</PackageReleaseNotes>
+    <PackageReleaseNotes>- optimised the library
+- OS independent</PackageReleaseNotes>
     <PackAsTool>False</PackAsTool>
     <ToolCommandName>simplog-filelog</ToolCommandName>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
